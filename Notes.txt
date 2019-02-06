@@ -1,0 +1,14 @@
+acousticness        750 non-null float64 	[0, 1]
+danceability        750 non-null float64	[0, 1]
+duration            750 non-null int64		[33840, 675360] no limits (should we scale this, using sklearn preprocessing scaler, remember inverse?)
+energy              750 non-null float64	[0, 1]
+instrumentalness    750 non-null float64	[0, 1] around 650 < 0.1 instrumentalness
+key                 750 non-null int64		[0, 11] (could we binarize this, and make one column for each key and let the right one be 1, and the others 0?)
+liveness            750 non-null float64	[0, 1]
+loudness            750 non-null float64	[-29.601, -0.533]
+mode                750 non-null int64		{0, 1} binary
+speechiness         750 non-null float64	[0, 1]
+tempo               750 non-null float64	[55.747, 204.162] no limits (should perhaps scale this as well)
+time_signature      750 non-null int64		{1,2,3,4,5} (could we binarize this as well? What happens if there is a 6 in the test data?)
+valence             750 non-null float64	[0, 1]
+label               750 non-null int64		{0, 1} = {dislike, like}
