@@ -14,18 +14,20 @@ orig_cols = orig_training_data.columns.values
 orig_N = len(orig_training_data)
 
 # define training / testing sizes
-N_TRAIN = 350
+N_TRAIN = 400
 N_TEST = orig_N - N_TRAIN
 
 # create training and testing data sets
-# np.random.seed(1)
+np.random.seed(1)
 idx = orig_training_data.index.isin(np.random.choice(orig_N, size=(N_TRAIN,), replace=False))
 train = orig_training_data.iloc[idx]
 test = orig_training_data.iloc[~idx]
 
 # define input and output columns
-cols_in = orig_cols[orig_cols != 'label']
+# cols_in = orig_cols[orig_cols != 'label']
+cols_in = ['duration']
 cols_out = ['label']
+
 
 # define training and  testing inputs and outputs
 X_train = train[cols_in].values
